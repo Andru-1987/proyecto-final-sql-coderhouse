@@ -58,3 +58,9 @@
 
 ## Herramientas y tecnologias usadas
 
+## Como levantar el proyecto en CodeSpaces GitHub
+* env: Archivo con contraseñas y data secretas
+* Makefile: Abstracción de creacción del proyecto
+* docker-compose.yml: Permite generar las bases de datos en forma de contenedores
+
+#### Pasos para arrancar el proyecto

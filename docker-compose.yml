@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: $ROOT_PASSWORD
+    volumes:
+      - ./objects:/objects
+      - ./structure:/structure
+    ports:
+      - "3306:3306"
