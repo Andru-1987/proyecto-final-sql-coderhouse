@@ -40,6 +40,6 @@ objects:
 
 clean-db:
 	@echo "Remove the Database"
-	docker exec -it mysql mysql -u root -p$(PASSWORD) --host $(HOST) --port $(PORT) -e "DROP DATABASE IF EXISTS mozo_atr;"
+	docker exec -it mysql mysql -u root -p$(PASSWORD) --host $(HOST) --port $(PORT) -e "DROP DATABASE IF EXISTS $(DATABASE_NAME);"
 	@echo "Bye"
 	docker compose -f $(DOCKER_COMPOSE_FILE) down
