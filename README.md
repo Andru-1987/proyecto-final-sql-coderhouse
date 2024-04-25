@@ -420,6 +420,7 @@ Se puede generar un comando en el archivo `make backup` que me permite ejecutar 
 * Makefile (para generar una interfaz sencilla de procesos)
 * Docker (para generar un container)
 * MySQL (Motor de bases de datos `version: latest`)
+* MySQL Workbench (Interfaz grafica)
 * Mockaroo (para otorgar datos ficticios)
 
 ## Como levantar el proyecto en CodeSpaces GitHub
