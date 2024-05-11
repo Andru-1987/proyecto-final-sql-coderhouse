@@ -64,3 +64,10 @@
 * docker-compose.yml: Permite generar las bases de datos en forma de contenedores
 
 #### Pasos para arrancar el proyecto
+
+* En la terminal de linux escribir :
+    - `make` _si te da un error de que no conexion al socket, volver al correr el comando `make`_
+    - `make clean-db` limpiar la base de datos
+    - `make test-db` para mirar los datos de cada tabla
+    - `make backup-db` para realizar un backup de mi base de datos
+    - `make access-db` para acceder a la base de datos
