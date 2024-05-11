@@ -41,6 +41,16 @@ objects:
 	docker exec -it mysql  mysql -u root -p$(PASSWORD) -e "source $$file"; \
 	done
 
+test-db:
+	@echo "Testing the tables"
+	@TABLES=$$(docker exec -it $(SERVICE_NAME) mysql -u root -p$(PASSWORD) -N -B -e "USE $(DATABASE_NAME); SHOW TABLES;"); \
+	for TABLE in $$TABLES; do \
+		echo "Table: $$TABLE"; \
+		docker exec -it $(SERVICE_NAME) mysql -u root -p$(PASSWORD) -N -B -e "USE $(DATABASE_NAME); SELECT * FROM $$TABLE LIMIT 5;"; \
+		echo "----------------------------------------------"; \
+	done
+
+
 access-db:
 	@echo "Access to db-client"
 	docker exec -it $(SERVICE_NAME) mysql -u root -p$(PASSWORD) 
