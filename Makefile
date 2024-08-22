@@ -14,7 +14,7 @@ DOCKER_COMPOSE_FILE=./docker-compose.yml
 DATABASE_CREATION=./structure/database_structure.sql
 DATABASE_POPULATION=./structure/population.sql
 
-FILES := $(wildcard ./objects/*.sql)
+
 
 
 .PHONY: all up objects clean
@@ -34,12 +34,6 @@ up:
 	docker exec -it mysql mysql -u root -p$(PASSWORD) -e "source $(DATABASE_CREATION);"
 	docker exec -it mysql mysql -u root -p$(PASSWORD) --local-infile=1 -e "source $(DATABASE_POPULATION)"
 
-objects:
-	@echo "Create objects in database"
-	@for file in $(FILES); do \
-	    echo "Process $$file and add to the database: $(DATABASE_NAME)"; \
-	docker exec -it mysql  mysql -u root -p$(PASSWORD) -e "source $$file"; \
-	done
 
 test-db:
 	@echo "Testing the tables"
